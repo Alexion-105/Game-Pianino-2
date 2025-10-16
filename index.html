@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎹 Ритм-Пианино</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-header">
+    <h1>🎵 Ритм-Пианино</h1>
+
+    <div class="stats">
+      <div>Очки: <span id="score">0</span></div>
+      <div>Пропущено: <span id="missed">0</span>/10</div>
+    </div>
+
+    <div class="controls">
+      <select id="musicSelect">
+        <option value="">🎶 Выбери трек</option>
+        <option value="music/Король и Шут - Кукла Колдуна.mp3">Кукла Колдуна</option>
+        <option value="music/Starset - My Demons.mp3">My Demons</option>
+        <option value="music/Twenty One Pilots - Stressed Out.mp3">Stressed Out</option>
+      </select>
+      <button id="startBtn">▶ Начать</button>
+    </div>
+  </div>
+
+  <div class="game-area" id="gameArea"></div>
+
+  <div id="gameOver" class="hidden">
+    <h2>💀 Игра окончена!</h2>
+    <p>Очки: <span id="finalScore"></span></p>
+    <button id="restartBtn">🔁 Заново</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle, #1b1b1b, #000);
+  color: #fff;
+  overflow: hidden;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #111;
+  border-bottom: 2px solid #333;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 18px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#musicSelect, #startBtn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#startBtn {
+  background: #00ffcc;
+  color: #000;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#startBtn:hover {
+  background: #00ffaa;
+}
+
+.game-area {
+  position: relative;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  background: linear-gradient(to bottom, #111, #222);
+  touch-action: none;
+}
+
+.tile {
+  position: absolute;
+  bottom: 100%;
+  height: 90px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #00eaff, #0077ff);
+  box-shadow: 0 0 20px #00eaff;
+  cursor: pointer;
+  transition: transform 0.05s;
+}
+
+.tile:active {
+  transform: scale(0.95);
+}
+
+#gameOver {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px #00eaff;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 📱 Адаптация под телефоны */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .game-header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .controls {
+    justify-content: center;
+  }
+
+  .stats {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  #musicSelect, #startBtn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .tile {
+    height: 70px;
+  }
+}
+
+/* 📱 Маленькие экраны */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  .tile {
+    height: 60px;
+  }
+
+  #gameOver {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+}
+
+/* 💻 iPad и планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .controls select,
+  .controls button {
+    font-size: 1rem;
+  }
+
+  .tile {
+    height: 80px;
+  }
+}
